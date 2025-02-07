@@ -1,1 +1,14 @@
+# Automate User Role Assignment
+use extra;
+
+  DELIMITER ``
+  CREATE TRIGGER assign_default_role
+  BEFORE INSERT ON lowstocknotifications
+  FOR EACH ROW
+      SET NEW.occupation = COALESCE(NEW.occupation, 'Viewer');
+END;
+``
+DELIMITER ;
+-- This trigger automtically assigns a default role if none is provided
+show triggers;
 
