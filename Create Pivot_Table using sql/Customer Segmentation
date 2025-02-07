@@ -1,0 +1,15 @@
+use northwind;
+    SELECT 
+       c.CategoryName as Suppliers,
+        SUM(CASE 
+    		WHEN CategoryName = 'Beverages' THEN round((od.unitprice * od.quantity)) ELSE 0 
+            END) AS BeverageSales,
+        SUM(CASE 
+    		WHEN CategoryName = 'Grains/Cereals' THEN round((od.unitprice * od.quantity)) ELSE 0 
+            END) AS Grains_CerealsSales
+  FROM Categories c
+  	join products p on c.categoryid = p.categoryid
+  	join orderdetails od on p.productid = od.productid
+  	join suppliers sp on p.supplierid = sp.supplierid
+  GROUP BY c.CategoryName;
+-- This automatically segments totalsales of respective by category.
