@@ -1,1 +1,15 @@
+# Automate Reports with Views
+USE northwind;
 
+CREATE VIEW MonthlySales AS
+         SELECT MONTH(OrderDate) AS Month, 
+    	  ROUND(SUM(unitprice * quantity),0) AS TotalSales
+    FROM Orders o
+    JOIN orderdetails od
+        ON o.OrderID = od.OrderID
+  GROUP BY MONTH(OrderDate)
+  order by Month;
+
+-- This view aggregates monthly sales data anytime its run no need to write queries for thi.
+
+select * from monthlysales;
