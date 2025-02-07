@@ -1,1 +1,23 @@
+# Stored Procedures for update
+USE northwind;
+DELIMITER ``
+CREATE PROCEDURE UpdateInactiveCustomers()
+BEGIN
+    UPDATE Customers c
+      JOIN orders ON c.CustomerID = orders.CustomerID
+    SET Status = 'Inactive'
+    WHERE OrderDate < CURDATE() - INTERVAL 1 YEAR;
+END;
+``
+DELIMITER ;
 
+alter table customers
+add Status varchar(50);
+
+CALL UpdateInactiveCustomers();
+
+select status from customers
+join orders 
+on customers.CustomerID = orders.customerid;
+
+-- This updates customers who haven't ordered in a year.
