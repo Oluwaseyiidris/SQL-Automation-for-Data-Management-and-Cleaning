@@ -1,4 +1,5 @@
 # Stored Procedures for update
+---
 USE northwind;
 DELIMITER ``
 CREATE PROCEDURE UpdateInactiveCustomers()
@@ -21,3 +22,25 @@ join orders
 on customers.CustomerID = orders.customerid;
 
 -- This updates customers who haven't ordered in a year.
+
+# Automate Data Archiving
+---
+use northwind;
+INSERT INTO Orders_Archive
+    SELECT * FROM Orders_sample
+        WHERE OrderDate < '1997-01-01';
+
+DELETE FROM Orders_sample
+WHERE OrderDate < '1997-01-01';
+
+select * from orders_archive;
+    select * from orders_sample;
+-- This automatically archives old orders into a separate table.
+
+
+
+
+
+
+
+
