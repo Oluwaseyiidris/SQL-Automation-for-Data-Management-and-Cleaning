@@ -44,9 +44,9 @@ Technologies Used
 ---
 SQL: For data extraction, transformation, and loading into the database.
 
-Database Management System: PostgreSQL to host and manage the dataset.
+Database Management System: MYSQL to host and manage the dataset.
 
-Programming Languages: SQL for data processing and scripting.
+Programming Languages: SQL for data processing and automation.
 
 **Insights**
 ---
