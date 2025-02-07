@@ -1,1 +1,18 @@
-Salary_validation
+# Automate Alerts for Low Stock using Trigger(yay! i like triggers)
+use parks_and_recreation;
+
+DELIMITER $$
+CREATE TRIGGER Salary_validation
+AFTER INSERT ON employee_salary
+FOR EACH ROW
+    BEGIN
+    IF NEW.salary <= 60000 THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'salary less than 60000';
+    END IF;
+END;
+$$
+DELIMITER ;
+
+show triggers;
+-- This automatically  prevents salary lesser than 60000
