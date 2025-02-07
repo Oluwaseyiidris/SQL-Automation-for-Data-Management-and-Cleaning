@@ -11,6 +11,7 @@ Project Structure
 ├── README.md                        <- README .
 ├── CTEs_for_automation              <- Folder for Common Table Expressions (CTEs).
 │   └── Duplicate Record Removal.sql
+├──   Create Pivot_Table using sq
 ├── Datasets used for automation   
 ├── Indexes_for_optimization  optimization.
 │   └── Performance Optimization	.sql
@@ -40,6 +41,8 @@ Automated Reporting: Using Views for dynamic sales aggregation
 Performance Optimization: Indexing frequently queried columns for faster query run
 
 Logging and Alerts: Using Event Scheduler for Tracking changes and setting automated alerts
+
+Create Pivot_Table using sql: segments Customers into categories for analysis
 
 Technologies Used
 ---
