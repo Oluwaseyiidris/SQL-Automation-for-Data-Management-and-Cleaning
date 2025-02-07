@@ -1,1 +1,21 @@
+# Data Validation with Triggers(automation)
+
+use northwind;
+show tables;
+
+DELIMITER //
+CREATE TRIGGER validate_price
+BEFORE INSERT ON Products
+FOR EACH ROW
+BEGIN
+    IF NEW.UnitPrice <= 0 THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Price must be greater than 0';
+    END IF;
+END;
+//
+DELIMITER ;
+
+
+-- This trigger make sure the product price is not less than zero, it makes it positive.
 
