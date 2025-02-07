@@ -1,1 +1,15 @@
+# TRIGGERS FOR DATA CLEANING
+USE carshop;
 
+DELIMITER ``
+CREATE TRIGGER clean_null_carname
+BEFORE INSERT ON Cars
+FOR EACH ROW
+SET NEW.Carname = coalesce(NEW.carname, 'Unknown');
+end;
+``
+delimiter ;
+-- this trigger automatically replace null values for carma,e nd automatically set it to unknown
+
+show triggers;
+select * from Cars;
