@@ -8,22 +8,22 @@ By implementing these automation techniques, we can ensure data integrity, optim
 Project Structure
 ---
 ```SQL_Automation_Project/
-├── README.md
-├── Datasets
-├── Triggers_for_automation/
+├── README.md                        <- README .
+├── CTEs_for_automation              <- Folder for Common Table Expressions (CTEs).
+│   └── Duplicate Record Removal.sql
+├── Datasets used for automation   
+├── Indexes_for_optimization  optimization.
+│   └── Performance Optimization	.sql
+├── Stored_Procedures_for_automation <- Folder for stored procedures.
+│   └── Data Archiving.sql
+├── Trigger_For_Automation           <- Folder for triggers.
 │   ├── Automated Alerts.sql
 │   ├── Automated Role Assignment.sql
 │   ├── Data Cleaning.sql
 │   ├── Data Validation.sql
 │   └── log_changes.sql
-├── Views_for_automation/
+├── View_for_automation              <- Folder for views.
 │   └── Automated Reporting.sql
-├── Stored_Procedures_for_automation & Archive/
-│   └── Data Archiving.sql
-├── Indexes_for_optimization/
-│   └── Performance Optimization	.sql
-└── CTEs_for_automation/
-    └── Duplicate Record Removal.sql
 ```
     
 
