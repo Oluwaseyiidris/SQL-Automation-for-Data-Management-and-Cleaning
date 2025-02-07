@@ -1,1 +1,6 @@
+# Index Creation for Performance
+use northwind;
+
+create index category_idex on products (categoryid);
+-- this optimizes the categoryid and makes it run faster
 
