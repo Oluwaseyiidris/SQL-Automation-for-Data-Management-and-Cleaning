@@ -8,21 +8,22 @@ By implementing these automation techniques, we can ensure data integrity, optim
 Project Structure
 ---
 ```SQL_Automation_Project/
-├── Datasets
 ├── README.md
-├── Triggers/
-│   ├── clean_null_carname.sql
-│   ├── validate_price.sql
-│   ├── salary_validation.sql
+├── Datasets
+├── Triggers for automation/
+│   └── Automated Alerts.sql
+│   ├── Automated Role Assignment.sql
+│   └── Data Cleaning.sql
+│   └── Data Validation.sql
 │   └── log_changes.sql
 ├── Views/
-│   └── monthly_sales_view.sql
+│   └── Automated Reporting.sql
 ├── Stored_Procedures/
-│   └── calculate_monthly_revenue.sql
+│   └── Data Archiving.sql
 ├── Indexes/
-│   └── category_index.sql
+│   └── Performance Optimization	.sql
 └── CTEs/
-    └── remove_duplicates.sql
+    └── Duplicate Record Removal.sql
 ```
     
 
