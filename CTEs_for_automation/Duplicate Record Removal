@@ -1,1 +1,17 @@
+# Automate Duplicate Record Removal using CTE
+WITH unique_num 
+   AS 
+(
+    SELECT *, 
+    Rank() OVER (PARTITION BY region ORDER BY customerID) AS RowNum
+    FROM Customers
+)
+delete from Customers
+WHERE customerID IN (SELECT customerID 
+                     FROM unique_num 
+                     WHERE RowNum > 1);
+
+-- This automatically removes duplicate records in the table based on region when run.
+
+select * from customers;
 
