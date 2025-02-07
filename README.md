@@ -10,19 +10,19 @@ Project Structure
 ```SQL_Automation_Project/
 ├── README.md
 ├── Datasets
-├── Triggers for automation/
-│   └── Automated Alerts.sql
+├── Triggers_for_automation/
+│   ├── Automated Alerts.sql
 │   ├── Automated Role Assignment.sql
-│   └── Data Cleaning.sql
-│   └── Data Validation.sql
+│   ├── Data Cleaning.sql
+│   ├── Data Validation.sql
 │   └── log_changes.sql
-├── Views/
+├── Views_for_automation/
 │   └── Automated Reporting.sql
-├── Stored_Procedures/
+├── Stored_Procedures_for_automation & Archive/
 │   └── Data Archiving.sql
-├── Indexes/
+├── Indexes_for_optimization/
 │   └── Performance Optimization	.sql
-└── CTEs/
+└── CTEs_for_automation/
     └── Duplicate Record Removal.sql
 ```
     
