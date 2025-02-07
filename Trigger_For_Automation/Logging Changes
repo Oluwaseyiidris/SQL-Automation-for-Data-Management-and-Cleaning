@@ -1,1 +1,21 @@
+# Log Changes
+use extra;
+  CREATE TABLE CustomerChangeLog (
+  CustomerID varchar(5), 
+  OldValue varchar(5),
+  NewValue varchar(5)
+    );
+
+DELIMITER ``
+  CREATE TRIGGER log_changes
+  AFTER UPDATE ON Customer
+  FOR EACH ROW
+INSERT INTO CustomerChangeLog (CustomerID, OldValue, NewValue, ChangedAt)
+VALUES (OLD.CustomerID, OLD.Email, NEW.Email, NOW());
+END;
+``
+DELIMITER ;
+
+show triggers;
+-- this logs data into the CustomerChangeLog table anytime a data is added
 
